@@ -2,6 +2,7 @@
 #define MONEY_H
 
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -13,7 +14,7 @@ public:
 	int all_cents;
 
 	friend std::ostream &operator<<(std::ostream &os, const Money & money){
-		os << "$" << money.all_cents * 0.01;
+		os << "$" << fixed << setprecision(2) << money.all_cents * 0.01;
 		return os;
 	}
 
