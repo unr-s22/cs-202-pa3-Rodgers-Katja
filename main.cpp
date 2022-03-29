@@ -85,10 +85,8 @@ int main(){
 	Account account(money);
 
 	Money d1(200, 0), d2(300, 24), d3(501, 22), w1(300, 10), w2(201, 34), c1(1301, 69), c2(800, 25);
-	
-	//this (account.printDetails(money);) is the equivalent of cout << account << endl; right now its just a function, not sure how to overload/use stringstream in this context
-	account.printDetails(money);
 
+	cout << account << endl;
 
 	account.makeDeposit(d1);
 	account.makeDeposit(d2);
@@ -97,7 +95,7 @@ int main(){
 	account.makeWithdrawals(w1);
 	account.makeWithdrawals(w2);
 
-	account.printDetails(money);
+	cout << account << endl;
 	
 	return 0;
 }
