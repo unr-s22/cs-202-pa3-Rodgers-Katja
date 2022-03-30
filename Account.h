@@ -19,20 +19,35 @@ class Account{
 	Money total;
 	//stringstream ss;
 	
-public:
+public:	
 	Account(Money m);
 	void makeDeposit (Money m);
 	void makeWithdrawals (Money m);
+	void changeTotal(Money m);
 
 	friend std::ostream &operator<<(std::ostream &ss, const Account & account){		
 
+		if(account.ismoney.size()<=0){
+		
 		ss << "Account Details" << endl;
 		ss << "--------------------------" << endl;
 		ss << "Current Balance: " << endl;
 		ss << account.total << endl;
-
-		if(account.ismoney.size()>0){
-
+		}
+	
+		else if(account.ismoney.size()>0){
+			
+			ss << "Account Details" << endl;
+			ss << "--------------------------" << endl;
+			ss << "Current Balance: " << endl;
+			for (int k=1; k < account.deposits.size(); k++){
+				cout<< account.deposits[k] + account.total << endl;
+			}
+			for (int h=1; h < account.deposits.size(); h++){
+				cout<< account.total - account.withdrawals[h]  << endl;
+			}
+			ss << account.total << endl;
+	
 			ss << "--------------------------" << endl;
 			ss << "Number of Deposits: ";
 			ss << account.deposits.size()-1 << endl;
@@ -54,6 +69,13 @@ public:
 
 		return ss;
 	}
+
+	
 };
+
+
+
+
+
 
 #endif //Account
