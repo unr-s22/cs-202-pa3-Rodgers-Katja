@@ -17,6 +17,7 @@ class Account{
 	vector<bool> ismoney;
 	
 	Money total;
+	Money newtotal;
 	//stringstream ss;
 	
 public:	
@@ -26,25 +27,28 @@ public:
 	void changeTotal(Money m);
 
 	friend std::ostream &operator<<(std::ostream &ss, const Account & account){		
-
 		if(account.ismoney.size()<=0){
 		
-		ss << "Account Details" << endl;
-		ss << "--------------------------" << endl;
-		ss << "Current Balance: " << endl;
-		ss << account.total << endl;
+			ss << "Account Details" << endl;
+			ss << "--------------------------" << endl;
+			ss << "Current Balance: " << endl;
+			ss << account.total << endl;
 		}
 	
 		else if(account.ismoney.size()>0){
-			
+			Money m1, m2;
+			//not working ;(
+			auto sum_deposits = accumulate(account.deposits.begin(), account.deposits.end(), m1);
+			auto sum_withdrawal = accumulate(account.withdrawals.begin(), account.withdrawals.end(), m2);
+			ss << "deposits size: " << account.deposits.size() << " m1: " << m1 << " m2: " << m2 << endl;
 			ss << "Account Details" << endl;
 			ss << "--------------------------" << endl;
 			ss << "Current Balance: " << endl;
 			for (int k=1; k < account.deposits.size(); k++){
-				cout<< account.deposits[k] + account.total << endl;
+				account.newtotal + account.deposits[k];
 			}
 			for (int h=1; h < account.deposits.size(); h++){
-				cout<< account.total - account.withdrawals[h]  << endl;
+				account.total - account.withdrawals[h];
 			}
 			ss << account.total << endl;
 	
