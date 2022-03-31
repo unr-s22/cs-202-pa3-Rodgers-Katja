@@ -18,5 +18,12 @@ void Account::makeWithdrawals(Money m){
 void Account::update(){
 	auto sum_deposits = accumulate(deposits.begin(), deposits.end(), M);
 	auto sum_withdrawals = accumulate(withdrawals.begin(), withdrawals.end(), M);
+	//Warns if account is below or at zero and nothing if it isn't
+	if(sum_deposits <= sum_withdrawals){
+		cout << "*************" << endl;
+		cout << "***WARNING***" << endl;
+		cout << "*************" << endl << endl;
+		cout << "This account is at or past zero." << endl << endl;
+	}
 	newtotal = sum_deposits - sum_withdrawals;
 }

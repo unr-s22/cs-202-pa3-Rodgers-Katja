@@ -26,18 +26,18 @@ public:
 
 	friend std::ostream &operator<<(std::ostream &ss, Account & account){		
 		if(!(account.ischanged)){
-		
 			ss << "Account Details" << endl;
 			ss << "--------------------------" << endl;
 			ss << "Current Balance: " << endl;
 			ss << account.total << endl;
 		}
-	
+		
 		else {
+			account.update();
+
 			ss << "Account Details" << endl;
 			ss << "--------------------------" << endl;
 			ss << "Current Balance: " << endl;
-			account.update();
 			ss << account.newtotal << endl;
 			ss << "--------------------------" << endl;
 			ss << "Number of Deposits: ";
