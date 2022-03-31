@@ -17,8 +17,7 @@ class Account{
 	bool ischanged = false;
 	
 	Money total, sum_deposits, sum_withdrawals, M, newtotal;
-	//stringstream ss;
-	
+
 public:	
 	Account(Money m);
 	void makeDeposit (Money m);
@@ -58,16 +57,8 @@ public:
 				ss << "(" << (j+1) <<") "<< account.withdrawals[j] << endl;
 			} 
 		}
-
 		return ss;
 	}
-
-	
 };
-
-
-
-
-
 
 #endif //Account

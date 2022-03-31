@@ -3,20 +3,17 @@
 #include "Money.h"
 
 int main(){
-
-
 //	===========
 //	Actual Main
 //	===========
 
 	Money money(300, 23);
 	Account account(money);
-	//D means deposit, W means withdrawl, C means check
+	//D means deposit and W means withdrawal
 	Money d1(200, 0), d2(300, 24), d3(501, 22), w1(300, 10), w2(201, 34);
 
 	cout << account << endl;
 
-	//numbers will probably change when I see account class
 	account.makeDeposit(d1);
 	account.makeDeposit(d2);
 	account.makeDeposit(d3);
@@ -28,30 +25,15 @@ int main(){
 	account.makeWithdrawals(w2);
 
 	cout << account << endl;
-	//Should display $800.25
+	//Should display $800.25 as current balance
 
-//main attempt 2
-/*
-	Money money(300, 23);
-	Account account(money);
-
-	Money d1(200, 0), d2(300, 24), d3(501, 22), w1(300, 10), w2(201, 34), c1(1301, 69), c2(800, 25);
-
-	cout << account << endl;
-
-	account.makeDeposit(d1);
-	account.makeDeposit(d2);
-	account.makeDeposit(d3);
-
-	account.makeWithdrawals(w1);
-	account.makeWithdrawals(w2);
-
-	cout << account << endl;
-*/	
 	return 0;
 }
 
 /*
+	================
+	Old testing code
+	================
 	cout << "hello world!" << endl;
 	Money m(100, 10);
 	cout << m << endl;

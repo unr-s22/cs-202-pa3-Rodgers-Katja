@@ -19,7 +19,4 @@ void Account::update(){
 	auto sum_deposits = accumulate(deposits.begin(), deposits.end(), M);
 	auto sum_withdrawals = accumulate(withdrawals.begin(), withdrawals.end(), M);
 	newtotal = sum_deposits - sum_withdrawals;
-	//cout << "Equation A: "<< newtotal << " = " << sum_deposits << " - " << sum_withdrawals << endl;
 }
-
-
