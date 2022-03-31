@@ -3,45 +3,6 @@
 #include "Money.h"
 
 int main(){
-/*
-	cout << "hello world!" << endl;
-	Money m(100, 10);
-	cout << m << endl;
-
-	Money m1(120, 10);
-	//
-	//Tests
-	if(m < m1){
-		cout << "m < m1" << endl;
-	}
-	if(m > m1){
-		cout << "m > m1" << endl;
-	}
-	if(m <= m1){
-		cout << "m <= m1" << endl;
-	}
-	if(m >= m1){
-		cout << "m >= m1" << endl;
-	}
-	if(m != m1){
-		cout << "m != m1" << endl;
-	}
-	if(m == m1){
-		cout << "m == m1" << endl;
-	}
-
-	cout << (m + m1) << endl;
-	cout << (m - m1) << endl;
-
-	//test for me
-
-	Account account(m1);
-	Money d1(200, 0), d2(300, 24);
-
-	account.makeDeposit(d1);
-	account.makeDeposit(d2);
-	account.printDetails(m1);
-*/
 
 
 //	===========
@@ -89,3 +50,43 @@ int main(){
 */	
 	return 0;
 }
+
+/*
+	cout << "hello world!" << endl;
+	Money m(100, 10);
+	cout << m << endl;
+
+	Money m1(120, 10);
+	//
+	//Tests
+	if(m < m1){
+		cout << "m < m1" << endl;
+	}
+	if(m > m1){
+		cout << "m > m1" << endl;
+	}
+	if(m <= m1){
+		cout << "m <= m1" << endl;
+	}
+	if(m >= m1){
+		cout << "m >= m1" << endl;
+	}
+	if(m != m1){
+		cout << "m != m1" << endl;
+	}
+	if(m == m1){
+		cout << "m == m1" << endl;
+	}
+
+	cout << (m + m1) << endl;
+	cout << (m - m1) << endl;
+
+	//test for me
+
+	Account account(m1);
+	Money d1(200, 0), d2(300, 24);
+
+	account.makeDeposit(d1);
+	account.makeDeposit(d2);
+	account.printDetails(m1);
+*/

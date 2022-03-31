@@ -14,19 +14,19 @@ class Account{
 
 	vector<Money> withdrawals;
 	vector<Money> deposits;
-	vector<bool> ismoney;
+	bool ischanged = false;
 	
-	Money total, sum_deposits, sum_withdrawals, M;
+	Money total, sum_deposits, sum_withdrawals, M, newtotal;
 	//stringstream ss;
 	
 public:	
 	Account(Money m);
 	void makeDeposit (Money m);
 	void makeWithdrawals (Money m);
-	void changeTotal(Money m);
+	void update();
 
-	friend std::ostream &operator<<(std::ostream &ss, const Account & account){		
-		if(account.ismoney.size()<=0){
+	friend std::ostream &operator<<(std::ostream &ss, Account & account){		
+		if(!(account.ischanged)){
 		
 			ss << "Account Details" << endl;
 			ss << "--------------------------" << endl;
@@ -34,12 +34,12 @@ public:
 			ss << account.total << endl;
 		}
 	
-		else if(account.ismoney.size()>0){
+		else {
 			ss << "Account Details" << endl;
 			ss << "--------------------------" << endl;
 			ss << "Current Balance: " << endl;
-			ss << account.sum_deposits << " + " << account.sum_withdrawals << " + " << account.total << " = ";
-			ss << (account.sum_deposits + account.sum_withdrawals + account.total) << endl;
+			account.update();
+			ss << account.newtotal << endl;
 			ss << "--------------------------" << endl;
 			ss << "Number of Deposits: ";
 			ss << account.deposits.size()-1 << endl;

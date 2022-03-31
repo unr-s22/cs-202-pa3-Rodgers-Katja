@@ -8,16 +8,18 @@ Account::Account(Money m){
 
 void Account::makeDeposit(Money m){
 	deposits.push_back(m);
-	ismoney.push_back(true);
-	auto sum_deposits = accumulate(deposits.begin(), deposits.end(), M);
-	cout << "sum_deposits = " << sum_deposits << " M: " << M << endl;
+	ischanged = true;
 }
 
 void Account::makeWithdrawals(Money m){
 	withdrawals.push_back(m);
-	ismoney.push_back(true);
-	auto sum_withdrawals = accumulate(withdrawals.begin(), withdrawals.end(), M, minus<Money>());
-	cout << "sum_withdrawals = " << sum_withdrawals << " M: " << M << endl;
+	ischanged = true;
+}
+void Account::update(){
+	auto sum_deposits = accumulate(deposits.begin(), deposits.end(), M);
+	auto sum_withdrawals = accumulate(withdrawals.begin(), withdrawals.end(), M);
+	newtotal = sum_deposits - sum_withdrawals;
+	//cout << "Equation A: "<< newtotal << " = " << sum_deposits << " - " << sum_withdrawals << endl;
 }
 
 
