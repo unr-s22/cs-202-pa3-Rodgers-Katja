@@ -16,8 +16,7 @@ class Account{
 	vector<Money> deposits;
 	vector<bool> ismoney;
 	
-	Money total;
-	Money newtotal;
+	Money total, sum_deposits, sum_withdrawals, M;
 	//stringstream ss;
 	
 public:	
@@ -36,22 +35,11 @@ public:
 		}
 	
 		else if(account.ismoney.size()>0){
-			Money m1, m2;
-			//not working ;(
-			auto sum_deposits = accumulate(account.deposits.begin(), account.deposits.end(), m1);
-			auto sum_withdrawal = accumulate(account.withdrawals.begin(), account.withdrawals.end(), m2);
-			ss << "deposits size: " << account.deposits.size() << " m1: " << m1 << " m2: " << m2 << endl;
 			ss << "Account Details" << endl;
 			ss << "--------------------------" << endl;
 			ss << "Current Balance: " << endl;
-			for (int k=1; k < account.deposits.size(); k++){
-				account.newtotal + account.deposits[k];
-			}
-			for (int h=1; h < account.deposits.size(); h++){
-				account.total - account.withdrawals[h];
-			}
-			ss << account.total << endl;
-	
+			ss << account.sum_deposits << " + " << account.sum_withdrawals << " + " << account.total << " = ";
+			ss << (account.sum_deposits + account.sum_withdrawals + account.total) << endl;
 			ss << "--------------------------" << endl;
 			ss << "Number of Deposits: ";
 			ss << account.deposits.size()-1 << endl;
